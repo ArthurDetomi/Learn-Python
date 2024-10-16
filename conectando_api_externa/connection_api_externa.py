@@ -3,7 +3,7 @@ import json
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 
-API_KEY = '1325985d76cf333359183c6599956e0a'
+API_KEY = ''
 
 def find_weather_by_city_name(city_name = ''):
     params = {'appid' : API_KEY, 'q' : city_name}
@@ -17,11 +17,11 @@ def find_weather_by_city_name(city_name = ''):
 
 def write_city_and_weather_in_txt_file(city_with_weather_dict = {'' : ''}):
     file = open('cidade_clima.txt', 'w')
-    file.write('[Cidades - Clima]\n')
+    file.write('[Cidades/Clima]\n')
     
     count = 1
     for city_name in city_with_weather_dict.keys():
-        file.write(f'{count} - {city_name} - {city_with_weather_dict[city_name]}\n')
+        file.write(f'{count} - {city_name}/{city_with_weather_dict[city_name]}\n')
         count += 1
     
     file.close()  
@@ -29,12 +29,12 @@ def write_city_and_weather_in_txt_file(city_with_weather_dict = {'' : ''}):
 def write_city_and_weather_in_pdf_file(city_with_weather_dict = {'':''}):
     c = canvas.Canvas('saida.pdf', pagesize=letter)
     
-    c.setTitle('Cidade - Clima')
+    c.setTitle('Cidade/Clima')
     
     x = 100; y = 750
     count = 1
     for city_name in city_with_weather_dict:
-        c.drawString(x, y, f'{count} - {city_name} - {city_with_weather_dict[city_name]}')
+        c.drawString(x, y, f'{count} - {city_name}/{city_with_weather_dict[city_name]}')
         y -= 20
         count += 1
         if y < 50:
@@ -44,22 +44,7 @@ def write_city_and_weather_in_pdf_file(city_with_weather_dict = {'':''}):
         
     c.showPage()
     c.save()
-    print('PDF criado com sucesso!')
-    
-    while True:
-        print("Digite exit para sair")
-        city_name_inp = input('Digite uma cidade que você queira saber o clima:')
-        
-        if city_name_inp == 'exit':
-            break
-        
-        print(city_name_inp)
-        
-        if city_name_inp in city_with_weather_dict:
-            print(city_with_weather_dict[city_name_inp])
-        else:    
-            print(f'Essa cidade {city_name_inp} não está na base de dados')
-        
+    print('PDF criado com sucesso!')        
 
 def main():
     city_list = [
@@ -118,15 +103,23 @@ def main():
     
     city_with_weather_dict = {}
     
-
+    print('Carregando dados')
     for city_name in city_list:
         weather_by_city = find_weather_by_city_name(city_name)
         city_with_weather_dict[city_name] = weather_by_city
-        print(city_with_weather_dict)
+    print('Dados carregados com sucesso!')
     
     write_city_and_weather_in_txt_file(city_with_weather_dict)
     write_city_and_weather_in_pdf_file(city_with_weather_dict)
     
-
-
+    print('\tDigite (exit) para sair')
+    while True:
+        city_name_search =  input('Digite o nome de uma cidade que você queira saber o clima:')
+        if city_name_search == 'exit':
+            break
+        if city_name_search in city_with_weather_dict:
+            print(f'Clima: {city_with_weather_dict[city_name_search]}')
+        else:
+            print('Cidade não está na base de dados!')
+        
 main()
