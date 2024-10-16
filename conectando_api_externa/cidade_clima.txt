@@ -1,0 +1,51 @@
+[Cidades - Clima]
+1 - Teresina - Clouds
+2 - Rio de Janeiro - Clear
+3 - Brasília - Clouds
+4 - Fortaleza - Clouds
+5 - Salvador - Clouds
+6 - Belo Horizonte - Clouds
+7 - Manaus - Clouds
+8 - Curitiba - Haze
+9 - Recife - Clouds
+10 - Goiânia - Clouds
+11 - Porto Alegre - Clouds
+12 - Belém - Clouds
+13 - Guarulhos - Clear
+14 - Campinas - Clear
+15 - São Luís - Clouds
+16 - Maceió - Clouds
+17 - Campo Grande - Clear
+18 - São Gonçalo - Clear
+19 - João Pessoa - Clouds
+20 - São Bernardo do Campo - Clouds
+21 - Duque de Caxias - Clear
+22 - Nova Iguaçu - Clear
+23 - Natal - Clouds
+24 - Santo André - Clear
+25 - Osasco - Clear
+26 - Sorocaba - Clouds
+27 - Uberlândia - Clouds
+28 - Ribeirão Preto - Clouds
+29 - São José dos Campos - Clear
+30 - Cuiabá - Clear
+31 - Jaboatão dos Guararapes - Clouds
+32 - Contagem - Clouds
+33 - Joinville - Clouds
+34 - Feira de Santana - Clouds
+35 - Aracaju - Clouds
+36 - Londrina - Clouds
+37 - Juiz de Fora - Clouds
+38 - Florianópolis - Clouds
+39 - Aparecida de Goiânia - Clouds
+40 - Serra - Clouds
+41 - Campos dos Goytacazes - Clouds
+42 - Belford Roxo - Clear
+43 - Niterói - Clear
+44 - São José do Rio Preto - Clear
+45 - Ananindeua - Clouds
+46 - Vila Velha - Clouds
+47 - Caxias do Sul - Clouds
+48 - Porto Velho - Clear
+49 - Mogi das Cruzes - Clouds
+50 - Jundiaí - Clouds
